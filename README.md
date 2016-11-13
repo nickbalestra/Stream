@@ -1,3 +1,3 @@
 # Stream
 
-## A toy functional reactive stream library for JavaScript
+A toy functional reactive stream library for JavaScript
