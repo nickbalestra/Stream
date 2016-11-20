@@ -100,7 +100,7 @@
     Observable.prototype.map = function(transformation){
       const originalProducer = this.subscribe;
       const newProducer = function(observer){
-        originalProducer({
+        return originalProducer({
           next (value) {observer.next(transformation(value))},
           error (err) {observer.error(err)},
           complete () {observer.complete()}
@@ -118,7 +118,7 @@
     Observable.prototype.filter = function(predicate){
       const originalProducer = this.subscribe;
       const newProducer = function(observer){
-        originalProducer({
+        return originalProducer({
           next (value) {
             if (predicate(value) === true) {
               observer.next(value)
